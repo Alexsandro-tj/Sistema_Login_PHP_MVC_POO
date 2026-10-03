@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__.'/../controller/usuariosController.php';
+include_once __DIR__.'/../Controller/UsuariosController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
