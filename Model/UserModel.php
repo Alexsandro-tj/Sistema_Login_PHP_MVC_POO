@@ -9,7 +9,7 @@ class UserModel
 
     public function formCadastroLogin()
     {
-        include_once 'DAO/UserDAO.php';
+        include_once __DIR__ . '/../DAO/UserDAO.php';
         $dao = new UserDao();
         $dao->insert($this);
     }
