@@ -1,11 +1,11 @@
 <?php
-include_once __DIR__.'/controller/UsuariosController.php';
+include_once __DIR__.'/../controller/UsuariosController.php';
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch ($url) {
     case '/':
-        require_once __DIR__.'/view/modules/usuarios/login.php';
+        require_once __DIR__.'/../view/modules/usuarios/login.php';
         break;
     case '/user/listaCadastrados':
         echo "<p>Listadando Cadastrados</p>";
