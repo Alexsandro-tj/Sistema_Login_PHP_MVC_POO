@@ -12,7 +12,7 @@ class UsuariosController
     }
     public static function saveUser()
     {
-        include_once __DIR__ . '/../model/UserModel.php';
+        include __DIR__ . '/../model/UserModel.php';
 
         $model = new UserModel();
         $model->email = $_POST['inputCadEmail'];
