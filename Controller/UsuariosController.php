@@ -8,7 +8,7 @@ class UsuariosController
 
         //include "Model/usuarioModel.php";
 
-        include 'view/modules/usuarios/formCadastro.php';
+        include __DIR__ . '/../view/modules/usuarios/formCadastro.php';
     }
     public static function saveUser()
     {
