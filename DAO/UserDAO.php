@@ -7,8 +7,18 @@ class UserDao
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost:3306;dbname=mydb';
-        $this->conexao = new PDO($dsn, 'root', 'SANDRO.rd650');
+        /* $dsn = 'mysql:host=localhost:3306;dbname=mydb';
+        $this->conexao = new PDO($dsn, 'root', 'SANDRO.rd650'); */
+        $host = getenv('DB_HOST');
+        $port = getenv('DB_PORT');
+        $dataBase = getenv('DB_NAME');
+        $user = getenv('DB_USER');
+        $password = getenv('DB_PASSWORD');
+        $dsn = "mysql:host=$host;port=$port;dbname=$dataBase;charset=utf8mb4";
+
+        $this->conexao = new PDO($dsn,$user,$password);
+
+        $this->conexao->numfmt_set_attribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function insert(UserModel $model)
