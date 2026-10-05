@@ -18,7 +18,7 @@ class UserDao
 
         $this->conexao = new PDO($dsn,$user,$password);
 
-        $this->conexao->numfmt_set_attribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function insert(UserModel $model)
