@@ -19,5 +19,6 @@ class UsuariosController
         $model->senha = $_POST['inputCadSenha'];
 
         $model->formCadastroLogin();
+        header('location:/');
     }
 }
