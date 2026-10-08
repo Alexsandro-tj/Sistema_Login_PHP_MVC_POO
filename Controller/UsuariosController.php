@@ -16,7 +16,7 @@ class UsuariosController
 
         $model = new UserModel();
         $model->email = $_POST['inputCadEmail'];
-        $model->senha = $_POST['inputCadSenha'];
+        $model->senha = password_hash($_POST['inputCadSenha'], PASSWORD_DEFAULT, ['cost' => 10]);
 
         $model->formCadastroLogin();
         header('location:/');
