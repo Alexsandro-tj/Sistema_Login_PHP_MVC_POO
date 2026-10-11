@@ -40,7 +40,7 @@ class UsuariosController
         ) {
             include_once __DIR__ . '/../view/modules/usuarios/dashBoard.php';
         } else {
-            header('location:login.php');
+            header('location:/');
             echo "<p>Erro. Tente novamente!</p>";
         }
     }
