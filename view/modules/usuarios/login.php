@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <form action="" method="post">
+    <form action="/user/checkLogin" method="post">
 
         <label>E-mail: </label>
         <input type="email" name="inputEmail" placeholder="Digite seu e-mail" required>
