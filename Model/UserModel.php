@@ -17,7 +17,7 @@ class UserModel
     {
         include_once __DIR__ . '/../DAO/UserDAO.php';
         $daoVerificaCredenciais = new UserDao();
-        $daoVerificaCredenciais->selectUser($this);
-        return $this->registro = $daoVerificaCredenciais;
+        $resultado = $daoVerificaCredenciais->selectUser($this);
+        return $this->registro = $resultado;
     }
 }

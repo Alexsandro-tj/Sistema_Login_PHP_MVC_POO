@@ -30,14 +30,16 @@ class UsuariosController
         $senhaLogin = $_POST['inputPwd'];
         $modelCheckLogin->verificaCredencias();
 
-    
-        
+        $registro = $modelCheckLogin->registro;
+
         // aqui lógica para pegar as credencias do banco por meio do obeto
         /* $modelCheckLogin. Após isso verificar com a senha por meio da veriavel $senhaLogin */
-        if($senhaLogin == $modelCheckLogin->registro['senha']){
-            // include_once __DIR__ .'/../view/modules/usuarios';
+        if (
+            !empty($registro) &&
+            $senhaLogin == $registro[0]['senha']
+        ) {
             echo "<p>Validação com sucesso!</p>";
-        }else{
+        } else {
             echo "<p>Erro. Tente novamente!</p>";
         }
     }
