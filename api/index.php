@@ -18,6 +18,7 @@ switch ($url) {
         break;
         case '/user/checkLogin':
             UsuariosController::checkLogin();
+            break;
     default:
         echo "Erro 404 (Not Found)";
         break;
