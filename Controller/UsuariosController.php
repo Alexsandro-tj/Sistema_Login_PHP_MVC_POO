@@ -38,8 +38,9 @@ class UsuariosController
             !empty($registro) &&
             $senhaLogin == $registro[0]['senha']
         ) {
-            echo "<p>Validação com sucesso!</p>";
+            include_once __DIR__ . '/../view/modules/usuarios/dashBoard.php';
         } else {
+            header('location:login.php');
             echo "<p>Erro. Tente novamente!</p>";
         }
     }
