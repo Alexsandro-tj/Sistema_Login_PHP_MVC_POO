@@ -4,7 +4,7 @@ class UserModel
 {
 
     public string $email, $senha;
-    public object $registro;
+    public  $registro;
 
 
     public function formCadastroLogin()
