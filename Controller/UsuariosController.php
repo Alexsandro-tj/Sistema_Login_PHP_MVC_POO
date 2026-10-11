@@ -34,7 +34,7 @@ class UsuariosController
         
         // aqui lógica para pegar as credencias do banco por meio do obeto
         /* $modelCheckLogin. Após isso verificar com a senha por meio da veriavel $senhaLogin */
-        if($senhaLogin == $modelCheckLogin->registro->senha){
+        if($senhaLogin == $modelCheckLogin->registro['senha']){
             // include_once __DIR__ .'/../view/modules/usuarios';
             echo "<p>Validação com sucesso!</p>";
         }else{
