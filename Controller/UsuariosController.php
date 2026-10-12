@@ -5,9 +5,6 @@ class UsuariosController
 
     public static function formCadastro()
     {
-
-        //include "Model/usuarioModel.php";
-
         include __DIR__ . '/../view/modules/usuarios/formCadastro.php';
     }
     public static function saveUser()
@@ -32,16 +29,14 @@ class UsuariosController
 
         $registro = $modelCheckLogin->registro;
 
-        // aqui lógica para pegar as credencias do banco por meio do obeto
-        /* $modelCheckLogin. Após isso verificar com a senha por meio da veriavel $senhaLogin */
         if (
             !empty($registro) &&
-            $senhaLogin == $registro[0]['senha']
+            $senhaLogin == $registro[0]['senha'] || password_verify($senhaLogin, $registro[0]['senha'])
         ) {
             include_once __DIR__ . '/../view/modules/usuarios/dashBoard.php';
         } else {
             header('location:/');
-            
+
             echo "<p>Erro. Tente novamente!</p>";
         }
     }
